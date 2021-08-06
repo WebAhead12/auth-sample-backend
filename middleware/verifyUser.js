@@ -5,7 +5,7 @@ module.exports = (req, res, next) => {
   const authHeader = req.headers.authorization
 
   if (!authHeader) {
-    res.status(403).send({ success: false })
+    return res.status(403).send({ success: false })
   }
 
   const token = authHeader.replace("Bearer ", "")
